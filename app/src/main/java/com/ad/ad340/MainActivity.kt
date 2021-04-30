@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity(), AppNavigator {
     }
 
     override fun navigateToCurrentForecast(zipcode: String) {
+
 //        val action = LocationEntryFragmentDirections.actionLocationEntryFragmentToCurrentForecastFragment2()
 //        findNavController(R.id.nav_host_fragment).navigate(action)
     }

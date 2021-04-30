@@ -13,7 +13,7 @@ import com.ad.ad340.*
 
 class ForecastDetailsFragment : Fragment() {
 
-    private val args: ForecastDetailsFragmentArgs by navArgs()
+//    private val args: ForecastDetailsFragmentArgs by navArgs()
 
     private lateinit var tempDisplaySettingManager: TempDisplaySettingManager
 
@@ -29,8 +29,8 @@ class ForecastDetailsFragment : Fragment() {
         val tempText = layout.findViewById<TextView>(R.id.tempText3)
         val descriptionText = layout.findViewById<TextView>(R.id.descriptionText3)
 
-        tempText.text = formatTempForDisplay(args.temp, tempDisplaySettingManager.getTempDisplaySetting())
-        descriptionText.text = args.description
+//        tempText.text = formatTempForDisplay(args.temp, tempDisplaySettingManager.getTempDisplaySetting())
+//        descriptionText.text = args.description
 
 
 
