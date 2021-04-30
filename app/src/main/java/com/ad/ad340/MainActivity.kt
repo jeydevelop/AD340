@@ -7,7 +7,7 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
-//import com.ad.ad340.forecast.CurrentForecastFragmentDirections
+import com.ad.ad340.forecast.CurrentForecastFragmentDirections
 
 
 class MainActivity : AppCompatActivity(), AppNavigator {
@@ -41,17 +41,18 @@ class MainActivity : AppCompatActivity(), AppNavigator {
     }
 
     override fun navigateToCurrentForecast(zipcode: String) {
+
 //        val action = LocationEntryFragmentDirections.actionLocationEntryFragmentToCurrentForecastFragment2()
 //        findNavController(R.id.nav_host_fragment).navigate(action)
     }
 
     override fun navigateToLocationEntry() {
-//        val action = CurrentForecastFragmentDirections.actionCurrentForecastFragmentToLocationEntryFragment()
-//        findNavController(R.id.nav_host_fragment).navigate(action)
+        val action = CurrentForecastFragmentDirections.actionCurrentForecastFragmentToLocationEntryFragment()
+        findNavController(R.id.nav_host_fragment).navigate(action)
     }
 
     override fun navigateToForecastDetails(forecast: DailyForecast) {
-//        val action = CurrentForecastFragmentDirections.actionCurrentForecastFragmentToForecastDetailsFragment(forecast.temp, forecast.description)
-//        findNavController(R.id.nav_host_fragment).navigate(action)
+        val action = CurrentForecastFragmentDirections.actionCurrentForecastFragmentToForecastDetailsFragment(forecast.temp, forecast.description)
+        findNavController(R.id.nav_host_fragment).navigate(action)
     }
 }
