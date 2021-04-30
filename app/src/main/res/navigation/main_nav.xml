@@ -14,7 +14,7 @@
         android:id="@+id/currentForecastFragment"
         android:name="com.ad.ad340.forecast.CurrentForecastFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_current_forecast" >
+        tools:layout="@layout/fragment_current_forecast">
         <action
             android:id="@+id/action_currentForecastFragment_to_locationEntryFragment"
             app:destination="@id/locationEntryFragment" />
@@ -26,7 +26,7 @@
         android:id="@+id/forecastDetailsFragment"
         android:name="com.ad.ad340.details.ForecastDetailsFragment"
         android:label="@string/app_name"
-        tools:layout="@layout/fragment_forecast_details" >
+        tools:layout="@layout/fragment_forecast_details">
         <argument
             android:name="temp"
             app:argType="float" />
