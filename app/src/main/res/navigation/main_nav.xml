@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/locationEntryFragment">
+    app:startDestination="@id/currentForecastFragment">
 
     <fragment
         android:id="@+id/locationEntryFragment"
         android:name="com.ad.ad340.location.LocationEntryFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_location_entry" />
+
     <fragment
         android:id="@+id/currentForecastFragment"
         android:name="com.ad.ad340.forecast.CurrentForecastFragment"

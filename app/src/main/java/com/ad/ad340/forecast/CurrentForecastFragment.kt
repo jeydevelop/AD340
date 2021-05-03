@@ -23,23 +23,19 @@ class CurrentForecastFragment : Fragment() {
     private lateinit var tempDisplaySettingManager: TempDisplaySettingManager
     private val forecastRepository = ForecastRepository()
 
-    private lateinit var appNavigator: AppNavigator
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        appNavigator = context as AppNavigator
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        tempDisplaySettingManager = TempDisplaySettingManager(requireContext())
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_current_forecast, container, false)
 
         val zipcode = arguments?.getString(KEY_ZIPCODE) ?: ""
 
-        // Inflate the layout for this fragment
-       val view = inflater.inflate(R.layout.fragment_current_forecast, container, false)
+
+        tempDisplaySettingManager = TempDisplaySettingManager(requireContext())
+
+
 
         val locationEntryButton: FloatingActionButton = view.findViewById(R.id.locationEntryButton)
         locationEntryButton.setOnClickListener {
