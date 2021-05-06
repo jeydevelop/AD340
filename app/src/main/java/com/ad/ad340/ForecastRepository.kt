@@ -6,16 +6,25 @@ import kotlin.random.Random
 
 class ForecastRepository {
 
+    private val _currentForecast = MutableLiveData<DailyForecast>()
+    val currentForecast: LiveData<DailyForecast> = _currentForecast
+
     private val _weeklyForecast = MutableLiveData<List<DailyForecast>>()
     val weeklyForecast : LiveData<List<DailyForecast>> = _weeklyForecast
 
 
-    fun loadForecast(zipcode: String) {
-        val randomValues = List(10) { Random. nextFloat().rem(100) * 100 }
+    fun loadWeeklyForecast(zipcode: String) {
+        val randomValues = List(7) { Random. nextFloat().rem(100) * 100 }
         val forecastItems = randomValues.map {temp ->
             DailyForecast(temp, getTempDescription(temp))
         }
         _weeklyForecast.setValue(forecastItems)
+    }
+
+    fun loadCurrentForecast(zipcode: String) {
+        val randomTemp = Random.nextFloat().rem(100) * 100
+        val forecast = DailyForecast(randomTemp, getTempDescription(randomTemp))
+        _currentForecast.value = forecast
     }
 
     private fun getTempDescription(temp: Float): String {

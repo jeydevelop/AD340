@@ -48,12 +48,12 @@ class CurrentForecastFragment : Fragment() {
         forecastList.adapter = dailyForecastAdapter
 
         // Create the observer which updates the UI in response to forecast updates
-        val weeklyForecastObserver = Observer<List<DailyForecast>> { forecastItems ->
-            //update our list adapter
-            dailyForecastAdapter.submitList(forecastItems)
-
+        val currentForecastObserver = Observer<DailyForecast> {forecastItem ->
+            // Update our list adapter
+            dailyForecastAdapter.submitList(listOf(forecastItem))
         }
-        forecastRepository.weeklyForecast.observe(this, weeklyForecastObserver)
+        forecastRepository.currentForecast.observe(viewLifecycleOwner, currentForecastObserver)
+
 
         val locationEntryButton: FloatingActionButton = view.findViewById(R.id.locationEntryButton)
         locationEntryButton.setOnClickListener {
@@ -63,7 +63,7 @@ class CurrentForecastFragment : Fragment() {
        locationRepository = LocationRepository(requireContext())
         val savedLocationObserver = Observer<Location> { savedLocation ->
             when (savedLocation) {
-                is Location.Zipcode -> forecastRepository.loadForecast(savedLocation.zipcode)
+                is Location.Zipcode -> forecastRepository.loadCurrentForecast(savedLocation.zipcode)
             }
         }
         locationRepository.savedLocation.observe(viewLifecycleOwner, savedLocationObserver)
