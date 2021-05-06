@@ -52,7 +52,7 @@ class CurrentForecastFragment : Fragment() {
             // Update our list adapter
             dailyForecastAdapter.submitList(listOf(forecastItem))
         }
-        forecastRepository.currentForecast.observe(viewLifecycleOwner, currentForecastObserver)
+        forecastRepository.currentWeather.observe(viewLifecycleOwner, currentForecastObserver)
 
 
         val locationEntryButton: FloatingActionButton = view.findViewById(R.id.locationEntryButton)
