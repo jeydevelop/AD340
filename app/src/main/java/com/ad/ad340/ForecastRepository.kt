@@ -21,7 +21,41 @@ class ForecastRepository {
 
 
     fun loadWeeklyForecast(zipcode: String) {
+        val call = createOpenWeatherMapService().currentWeather(zipcode, "imperial", BuildConfig.OPEN_WEATHER_MAP_API_KEY)
+        call.enqueue(object : Callback<CurrentWeather> {
+            override fun onFailure(call: Call<CurrentWeather>, t: Throwable) {
+                Log.e(ForecastRepository::class.java.simpleName, "error loading location for weekly forecast", t)
+            }
 
+            override fun onResponse(call: Call<CurrentWeather>, response: Response<CurrentWeather>) {
+                val weatherResponse = response.body()
+                if (weatherResponse != null) {
+                    // load 7 day forecast
+
+                 val forecastCall = createOpenWeatherMapService().sevenDayForecast(
+                         lat = weatherResponse.coord.lat,
+                         lon = weatherResponse.coord.lat,
+                         exclude = "current,minutely,hourly",
+                         units = "imperial",
+                         apiKey = BuildConfig.OPEN_WEATHER_MAP_API_KEY
+                 )
+                    forecastCall.enqueue(object: Callback<WeeklyForecast> {
+                        override fun onFailure(call: Call<WeeklyForecast>, t: Throwable) {
+                           Log.e(ForecastRepository::class.java.simpleName, "error loading weekly forecast")
+                        }
+
+                        override fun onResponse(call: Call<WeeklyForecast>, response: Response<WeeklyForecast>) {
+                          val weeklyForecastResponse = response.body()
+                            if (weeklyForecastResponse != null) {
+                                _weeklyForecast.value = weeklyForecastResponse
+                            }
+                        }
+
+                    })
+                }
+            }
+
+        })
     }
 
     fun loadCurrentForecast(zipcode: String) {
