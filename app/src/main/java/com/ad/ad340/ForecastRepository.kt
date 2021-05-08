@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.ad.ad340.api.CurrentWeather
+import com.ad.ad340.api.WeeklyForecast
 import com.ad.ad340.api.createOpenWeatherMapService
 import retrofit2.Call
 import retrofit2.Callback
@@ -15,16 +16,12 @@ class ForecastRepository {
     private val _currentWeather = MutableLiveData<CurrentWeather>()
     val currentWeather: LiveData<CurrentWeather> = _currentWeather
 
-    private val _weeklyForecast = MutableLiveData<List<DailyForecast>>()
-    val weeklyForecast : LiveData<List<DailyForecast>> = _weeklyForecast
+    private val _weeklyForecast = MutableLiveData<WeeklyForecast>()
+    val weeklyForecast : LiveData<WeeklyForecast> = _weeklyForecast
 
 
     fun loadWeeklyForecast(zipcode: String) {
-        val randomValues = List(7) { Random. nextFloat().rem(100) * 100 }
-        val forecastItems = randomValues.map {temp ->
-            DailyForecast(temp, getTempDescription(temp))
-        }
-        _weeklyForecast.setValue(forecastItems)
+
     }
 
     fun loadCurrentForecast(zipcode: String) {
