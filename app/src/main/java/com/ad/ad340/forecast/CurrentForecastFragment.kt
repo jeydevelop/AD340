@@ -1,7 +1,5 @@
 package com.ad.ad340.forecast
 
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,11 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.ad.ad340.*
 import com.ad.ad340.api.CurrentWeather
-import com.ad.ad340.details.ForecastDetailsFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.android.synthetic.main.fragment_current_forecast.*
 
@@ -38,6 +33,7 @@ class CurrentForecastFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_current_forecast, container, false)
         val locationName: TextView = view.findViewById(R.id.locationName)
+        val tempText: TextView = view.findViewById(R.id.tempTextLoco)
 
         val zipcode = arguments?.getString(KEY_ZIPCODE) ?: ""
 
@@ -48,6 +44,7 @@ class CurrentForecastFragment : Fragment() {
         // Create the observer which updates the UI in response to forecast updates
         val currentWeatherObserver = Observer<CurrentWeather> { weather ->
            locationName.text = weather.name
+            tempTextLoco.text = formatTempForDisplay(weather.forecast.temp, tempDisplaySettingManager.getTempDisplaySetting())
         }
 
         forecastRepository.currentWeather.observe(viewLifecycleOwner, currentWeatherObserver)
