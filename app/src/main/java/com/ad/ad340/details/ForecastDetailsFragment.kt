@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import coil.load
 import com.ad.ad340.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -30,13 +31,13 @@ class ForecastDetailsFragment : Fragment() {
         val tempText = layout.findViewById<TextView>(R.id.tempText3)
         val descriptionText = layout.findViewById<TextView>(R.id.descriptionText3)
         val dateText = layout.findViewById<TextView>(R.id.dateText)
-        val forecastIcon = layout.findViewById<ImageView>(R.id.forecasticon)
+        val forecastIcon = layout.findViewById<ImageView>(R.id.forecastIcon)
 
         tempText.text = formatTempForDisplay(args.temp, tempDisplaySettingManager.getTempDisplaySetting())
         descriptionText.text = args.description
 
         dateText.text = DATE_FORMAT.format(Date(args.date * 1000))
-        forecastIcon.
+        forecastIcon.load("http://openweathermap.org/img/wn/${args.icon}@2x.png")
 
 
 

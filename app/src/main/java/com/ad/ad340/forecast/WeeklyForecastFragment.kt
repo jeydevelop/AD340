@@ -28,9 +28,7 @@ class WeeklyForecastFragment : Fragment() {
     private lateinit var tempDisplaySettingManager: TempDisplaySettingManager
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         tempDisplaySettingManager = TempDisplaySettingManager(requireContext())
         // Inflate the layout for this fragment
        val view = inflater.inflate(R.layout.fragment_weekly_forecast, container, false)
@@ -78,7 +76,10 @@ class WeeklyForecastFragment : Fragment() {
     private fun showForecastDetails(forecast: DailyForecast) {
         val temp = forecast.temp.max
         val description = forecast.weather[0].description
-      val action = WeeklyForecastFragmentDirections.actionWeeklyForecastFragmentToForecastDetailsFragment(temp, description)
+        val date = forecast.date
+        val icon = forecast.weather[0].icon
+
+        val action = WeeklyForecastFragmentDirections.actionWeeklyForecastFragmentToForecastDetailsFragment(temp, description, date, icon)
         findNavController().navigate(action)
     }
 

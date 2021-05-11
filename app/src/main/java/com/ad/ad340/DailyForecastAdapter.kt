@@ -18,13 +18,12 @@ private val DATE_FORMAT = SimpleDateFormat("MM-dd-yyyy")
 class DailyForecastViewHolder(
         view: View,
 private val tempDisplaySettingManager: TempDisplaySettingManager
-    )
-    : RecyclerView.ViewHolder(view) {
+    ) : RecyclerView.ViewHolder(view) {
 
     private val tempText: TextView = view.findViewById(R.id.tempText)
     private val descriptionText: TextView = view.findViewById(R.id.descriptionText)
     private val dateText = view.findViewById<TextView>(R.id.dateText)
-    private val forecastIcon = view.findViewById<ImageView>(R.id.forecasticon)
+    private val forecastIcon = view.findViewById<ImageView>(R.id.forecastIcon)
 
     fun bind(dailyForecast: DailyForecast) {
         tempText.text = formatTempForDisplay(dailyForecast.temp.max, tempDisplaySettingManager.getTempDisplaySetting())
@@ -41,6 +40,17 @@ class DailyForecastAdapter(
     private val clickHandler: (DailyForecast) -> Unit
 ) : ListAdapter<DailyForecast, DailyForecastViewHolder>(DIFF_CONFIG) {
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DailyForecastViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_daily_forecast, parent, false)
+        return DailyForecastViewHolder(itemView, tempDisplaySettingManager)
+    }
+
+    override fun onBindViewHolder(holder: DailyForecastViewHolder, position: Int) {
+        holder.bind(getItem(position))
+        holder.itemView.setOnClickListener {
+            clickHandler(getItem(position))
+        }
+    }
 
     companion object {
         val DIFF_CONFIG = object : DiffUtil.ItemCallback<DailyForecast>() {
@@ -56,18 +66,6 @@ class DailyForecastAdapter(
 
             }
 
-        }
-    }
-
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DailyForecastViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_daily_forecast, parent, false)
-        return DailyForecastViewHolder(itemView, tempDisplaySettingManager)
-    }
-
-    override fun onBindViewHolder(holder: DailyForecastViewHolder, position: Int) {
-        holder.bind(getItem(position))
-        holder.itemView.setOnClickListener {
-            clickHandler(getItem(position))
         }
     }
 }

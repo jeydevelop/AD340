@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ad.ad340.*
 import com.ad.ad340.api.CurrentWeather
 import com.ad.ad340.api.DailyForecast
@@ -36,10 +38,13 @@ class CurrentForecastFragment : Fragment() {
         val locationName: TextView = view.findViewById(R.id.locationName)
         val tempText: TextView = view.findViewById(R.id.tempTextLoco)
 
-        val zipcode = arguments?.getString(KEY_ZIPCODE) ?: ""
-
-
         tempDisplaySettingManager = TempDisplaySettingManager(requireContext())
+
+//        val zipcode = arguments?.getString(KEY_ZIPCODE) ?: ""
+
+
+
+
 
 
         // Create the observer which updates the UI in response to forecast updates
@@ -69,20 +74,6 @@ class CurrentForecastFragment : Fragment() {
     private fun showLocationEntry() {
         val action = CurrentForecastFragmentDirections.actionCurrentForecastFragmentToLocationEntryFragment()
         findNavController().navigate(action)
-    }
-
-    companion object {
-        const val KEY_ZIPCODE = "key_zipcode"
-
-        fun newInstance(zipcode: String): CurrentForecastFragment {
-            val fragment = CurrentForecastFragment()
-
-            val args = Bundle()
-            args.putString(KEY_ZIPCODE, zipcode)
-            fragment.arguments = args
-
-            return fragment
-        }
     }
 }
 

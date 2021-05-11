@@ -36,8 +36,6 @@ class LocationEntryFragment : Fragment() {
 
         enterButton.setOnClickListener {
             val zipcode: String = zipcodeEditText.text.toString()
-
-
             if (zipcode.length != 5) {
                 Toast.makeText(requireContext(), R.string.zipcode_entry_error, Toast.LENGTH_SHORT).show()
             } else {
