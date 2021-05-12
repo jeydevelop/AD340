@@ -31,7 +31,7 @@ class ForecastDetailsFragment : Fragment() {
 
 private var _binding: FragmentForecastDetailsBinding? = null
     // this property only valid between onCreateView and onDestroyView
-    private val binding get()= _binding!!
+    private val binding get() = _binding!!
 
     private lateinit var tempDisplaySettingManager: TempDisplaySettingManager
 

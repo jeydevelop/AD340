@@ -26,9 +26,10 @@ class LocationEntryFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        locationRepository = LocationRepository(requireContext())
 
         // Inflate the layout for this fragment
+        locationRepository = LocationRepository(requireContext())
+
         val view = inflater.inflate(R.layout.fragment_location_entry, container, false)
 
         val zipcodeEditText: EditText = view.findViewById(R.id.zipcodeEditText)

@@ -1,6 +1,7 @@
 package com.ad.ad340
 
 import android.content.Context
+import android.content.DialogInterface
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 
@@ -20,9 +21,11 @@ fun showTempDisplaySettingDialog(context: Context, tempDisplaySettingManager: Te
     val dialogBuilder = AlertDialog.Builder(context)
     dialogBuilder.setTitle("Choose Display Units")
     dialogBuilder.setMessage("Choose which temperature unit to use for temperature display")
-            .setPositiveButton("F°") { _, _ ->
+        .setPositiveButton("F°", object: DialogInterface.OnClickListener {
+            override fun onClick(dialog: DialogInterface?, which: Int) {
                 tempDisplaySettingManager.updateSetting(TempDisplaySetting.Fahrenheit)
             }
+        })
             .setNeutralButton("C°") { _, _ ->
                 tempDisplaySettingManager.updateSetting(TempDisplaySetting.Celsius)
             }

@@ -23,7 +23,7 @@ class ForecastRepository {
 
     fun loadCurrentForecast(zipcode: String) {
 
-        val call = weatherService.currentWeather(zipcode, BuildConfig.OPEN_WEATHER_MAP_API_KEY, "imperial")
+        val call = weatherService.currentWeather(zipcode, BuildConfig.OPEN_WEATHER_MAP_API_KEY, "deca7a515cf8c601447a2688602f7cd9")
         call.enqueue(object : Callback<CurrentWeather> {
             override fun onFailure(call: Call<CurrentWeather>, t: Throwable) {
                 Log.e(ForecastRepository::class.java.simpleName, "error loading current weather", t)
@@ -39,7 +39,7 @@ class ForecastRepository {
     }
 
     fun loadWeeklyForecast(zipcode: String) {
-        val call = weatherService.currentWeather(zipcode, BuildConfig.OPEN_WEATHER_MAP_API_KEY, "imperial")
+        val call = weatherService.currentWeather(zipcode, BuildConfig.OPEN_WEATHER_MAP_API_KEY, "deca7a515cf8c601447a2688602f7cd9")
         call.enqueue(object : Callback<CurrentWeather> {
             override fun onFailure(call: Call<CurrentWeather>, t: Throwable) {
                 Log.e(ForecastRepository::class.java.simpleName, "error loading location for weekly forecast", t)

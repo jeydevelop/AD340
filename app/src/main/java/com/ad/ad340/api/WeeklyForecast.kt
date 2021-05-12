@@ -8,7 +8,7 @@ data class Temp(val min: Float, val max: Float)
 
 data class DailyForecast(
     @field:Json(name = "dt") val date: Long,
-val temp: Temp,
+    val temp: Temp,
     val weather: List<WeatherDescription>
 )
 
