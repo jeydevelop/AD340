@@ -1,4 +1,4 @@
-package com.WhatsTheWeatherApp.ad340
+package com.WhatsTheWeatherApp.WeatherApp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

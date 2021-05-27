@@ -1,4 +1,4 @@
-package com.WhatsTheWeatherApp.ad340.forecast
+package com.WhatsTheWeatherApp.WeatherApp.forecast
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -11,9 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.WhatsTheWeatherApp.ad340.*
-import com.WhatsTheWeatherApp.ad340.api.DailyForecast
-import com.WhatsTheWeatherApp.ad340.api.WeeklyForecast
+import com.WhatsTheWeatherApp.WeatherApp.*
+import com.WhatsTheWeatherApp.WeatherApp.api.DailyForecast
+import com.WhatsTheWeatherApp.WeatherApp.api.WeeklyForecast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 

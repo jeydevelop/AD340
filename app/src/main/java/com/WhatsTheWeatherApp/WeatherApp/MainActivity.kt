@@ -1,4 +1,4 @@
-package com.WhatsTheWeatherApp.ad340
+package com.WhatsTheWeatherApp.WeatherApp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

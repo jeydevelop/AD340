@@ -1,4 +1,4 @@
-package com.WhatsTheWeatherApp.ad340.forecast
+package com.WhatsTheWeatherApp.WeatherApp.forecast
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,8 +9,8 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import com.WhatsTheWeatherApp.ad340.*
-import com.WhatsTheWeatherApp.ad340.api.CurrentWeather
+import com.WhatsTheWeatherApp.WeatherApp.*
+import com.WhatsTheWeatherApp.WeatherApp.api.CurrentWeather
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 //import kotlinx.android.synthetic.*

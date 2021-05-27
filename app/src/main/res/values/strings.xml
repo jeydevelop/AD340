@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AD 340</string>
+    <string name="app_name">WhatsTheWeather</string>
     <string name="forecast_details">Forecast Details</string>
 
     <string name="zipcode_entry_error">Please enter valid zipcode</string>

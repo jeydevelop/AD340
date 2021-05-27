@@ -1,4 +1,4 @@
-package com.WhatsTheWeatherApp.ad340.details
+package com.WhatsTheWeatherApp.WeatherApp.details
 
 import android.os.Bundle
 import android.view.*
@@ -6,8 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
-import com.WhatsTheWeatherApp.ad340.*
-import com.WhatsTheWeatherApp.ad340.databinding.FragmentForecastDetailsBinding
+import coil.load
+import com.WhatsTheWeatherApp.WeatherApp.*
+import com.WhatsTheWeatherApp.WeatherApp.databinding.FragmentForecastDetailsBinding
 
 
 class ForecastDetailsFragment : Fragment() {

@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/locationEntryFragment"
-        android:name="com.ad.ad340.location.LocationEntryFragment"
+        android:name="com.WhatsTheWeatherApp.WeatherApp.location.LocationEntryFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_location_entry" />
 
     <fragment
         android:id="@+id/currentForecastFragment"
-        android:name="com.ad.ad340.forecast.CurrentForecastFragment"
+        android:name="com.WhatsTheWeatherApp.WeatherApp.forecast.CurrentForecastFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_current_forecast">
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/forecastDetailsFragment"
-        android:name="com.ad.ad340.details.ForecastDetailsFragment"
+        android:name="com.WhatsTheWeatherApp.WeatherApp.details.ForecastDetailsFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_forecast_details">
         <argument
@@ -43,7 +43,7 @@
     </fragment>
     <fragment
         android:id="@+id/weeklyForecastFragment"
-        android:name="com.ad.ad340.forecast.WeeklyForecastFragment"
+        android:name="com.WhatsTheWeatherApp.WeatherApp.forecast.WeeklyForecastFragment"
         android:label="WeeklyForecastFragment"
         tools:layout="@layout/fragment_weekly_forecast"
 

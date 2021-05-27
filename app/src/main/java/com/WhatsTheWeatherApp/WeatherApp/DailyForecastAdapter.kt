@@ -1,4 +1,4 @@
-package com.WhatsTheWeatherApp.ad340
+package com.WhatsTheWeatherApp.WeatherApp
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.WhatsTheWeatherApp.ad340.api.DailyForecast
+import com.WhatsTheWeatherApp.WeatherApp.api.DailyForecast
 import java.text.SimpleDateFormat
 import java.util.*
 

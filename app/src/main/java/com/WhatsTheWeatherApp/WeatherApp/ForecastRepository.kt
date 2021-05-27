@@ -1,11 +1,11 @@
-package com.WhatsTheWeatherApp.ad340
+package com.WhatsTheWeatherApp.WeatherApp
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.WhatsTheWeatherApp.ad340.api.CurrentWeather
-import com.WhatsTheWeatherApp.ad340.api.WeeklyForecast
-import com.WhatsTheWeatherApp.ad340.api.createOpenWeatherMapService
+import com.WhatsTheWeatherApp.WeatherApp.api.CurrentWeather
+import com.WhatsTheWeatherApp.WeatherApp.api.WeeklyForecast
+import com.WhatsTheWeatherApp.WeatherApp.api.createOpenWeatherMapService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
