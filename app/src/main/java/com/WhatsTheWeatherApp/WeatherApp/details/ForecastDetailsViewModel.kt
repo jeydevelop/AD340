@@ -1,4 +1,4 @@
-package com.ad.ad340.details
+package com.WhatsTheWeatherApp.ad340.details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

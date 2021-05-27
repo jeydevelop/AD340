@@ -1,23 +1,13 @@
-package com.ad.ad340.details
+package com.WhatsTheWeatherApp.ad340.details
 
-import android.content.DialogInterface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
-import coil.load
-import com.ad.ad340.*
-import com.ad.ad340.databinding.FragmentForecastDetailsBinding
-import kotlinx.android.synthetic.main.fragment_forecast_details.*
-import java.text.SimpleDateFormat
-import java.util.*
+import com.WhatsTheWeatherApp.ad340.*
+import com.WhatsTheWeatherApp.ad340.databinding.FragmentForecastDetailsBinding
 
 
 class ForecastDetailsFragment : Fragment() {

@@ -1,15 +1,14 @@
-package com.ad.ad340
+package com.WhatsTheWeatherApp.ad340
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.ad.ad340.api.CurrentWeather
-import com.ad.ad340.api.WeeklyForecast
-import com.ad.ad340.api.createOpenWeatherMapService
+import com.WhatsTheWeatherApp.ad340.api.CurrentWeather
+import com.WhatsTheWeatherApp.ad340.api.WeeklyForecast
+import com.WhatsTheWeatherApp.ad340.api.createOpenWeatherMapService
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.random.Random
 
 class ForecastRepository {
 
@@ -23,7 +22,7 @@ class ForecastRepository {
 
     fun loadCurrentForecast(zipcode: String) {
 
-        val call = weatherService.currentWeather(zipcode, BuildConfig.OPEN_WEATHER_MAP_API_KEY, "deca7a515cf8c601447a2688602f7cd9")
+        val call = weatherService.currentWeather(zipcode, "imperial", BuildConfig.OPEN_WEATHER_MAP_API_KEY)
         call.enqueue(object : Callback<CurrentWeather> {
             override fun onFailure(call: Call<CurrentWeather>, t: Throwable) {
                 Log.e(ForecastRepository::class.java.simpleName, "error loading current weather", t)
@@ -39,7 +38,7 @@ class ForecastRepository {
     }
 
     fun loadWeeklyForecast(zipcode: String) {
-        val call = weatherService.currentWeather(zipcode, BuildConfig.OPEN_WEATHER_MAP_API_KEY, "deca7a515cf8c601447a2688602f7cd9")
+        val call = weatherService.currentWeather(zipcode, "imperial", BuildConfig.OPEN_WEATHER_MAP_API_KEY)
         call.enqueue(object : Callback<CurrentWeather> {
             override fun onFailure(call: Call<CurrentWeather>, t: Throwable) {
                 Log.e(ForecastRepository::class.java.simpleName, "error loading location for weekly forecast", t)

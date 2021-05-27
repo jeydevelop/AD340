@@ -1,4 +1,4 @@
-package com.ad.ad340.location
+package com.WhatsTheWeatherApp.ad340.location
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,9 +9,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.ad.ad340.Location
-import com.ad.ad340.LocationRepository
-import com.ad.ad340.R
+import com.WhatsTheWeatherApp.ad340.Location
+import com.WhatsTheWeatherApp.ad340.LocationRepository
+import com.WhatsTheWeatherApp.ad340.R
 
 
 /**

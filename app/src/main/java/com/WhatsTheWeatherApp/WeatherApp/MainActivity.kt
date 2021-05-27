@@ -1,4 +1,4 @@
-package com.ad.ad340
+package com.WhatsTheWeatherApp.ad340
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +9,6 @@ import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
-import com.ad.ad340.forecast.CurrentForecastFragmentDirections
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 

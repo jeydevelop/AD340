@@ -1,4 +1,4 @@
-package com.ad.ad340
+package com.WhatsTheWeatherApp.ad340
 
 import android.content.Context
 import android.content.DialogInterface

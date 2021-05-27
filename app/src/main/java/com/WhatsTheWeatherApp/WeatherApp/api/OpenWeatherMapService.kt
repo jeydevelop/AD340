@@ -1,4 +1,4 @@
-package com.ad.ad340.api
+package com.WhatsTheWeatherApp.ad340.api
 
 import retrofit2.Call
 import retrofit2.Retrofit

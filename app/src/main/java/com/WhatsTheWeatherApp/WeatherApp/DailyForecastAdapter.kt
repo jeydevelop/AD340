@@ -1,4 +1,4 @@
-package com.ad.ad340
+package com.WhatsTheWeatherApp.ad340
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.ad.ad340.api.DailyForecast
+import com.WhatsTheWeatherApp.ad340.api.DailyForecast
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -20,8 +20,8 @@ class DailyForecastViewHolder(
 private val tempDisplaySettingManager: TempDisplaySettingManager
     ) : RecyclerView.ViewHolder(view) {
 
-    private val tempText: TextView = view.findViewById(R.id.tempText)
-    private val descriptionText: TextView = view.findViewById(R.id.descriptionText)
+    private val tempText = view.findViewById<TextView>(R.id.tempText)
+    private val descriptionText = view.findViewById<TextView>(R.id.descriptionText)
     private val dateText = view.findViewById<TextView>(R.id.dateText)
     private val forecastIcon = view.findViewById<ImageView>(R.id.forecastIcon)
 

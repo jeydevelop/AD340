@@ -1,4 +1,4 @@
-package com.ad.ad340.forecast
+package com.WhatsTheWeatherApp.ad340.forecast
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,13 +9,9 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.ad.ad340.*
-import com.ad.ad340.api.CurrentWeather
-import com.ad.ad340.api.DailyForecast
+import com.WhatsTheWeatherApp.ad340.*
+import com.WhatsTheWeatherApp.ad340.api.CurrentWeather
 import com.google.android.material.floatingactionbutton.FloatingActionButton
-import kotlinx.android.synthetic.main.fragment_current_forecast.*
 
 //import kotlinx.android.synthetic.*
 
@@ -43,10 +39,6 @@ class CurrentForecastFragment : Fragment() {
 
 
         tempDisplaySettingManager = TempDisplaySettingManager(requireContext())
-
-//        val zipcode = arguments?.getString(KEY_ZIPCODE) ?: ""
-
-
 
 
 

@@ -1,4 +1,4 @@
-package com.ad.ad340.api
+package com.WhatsTheWeatherApp.ad340.api
 
 import com.squareup.moshi.Json
 

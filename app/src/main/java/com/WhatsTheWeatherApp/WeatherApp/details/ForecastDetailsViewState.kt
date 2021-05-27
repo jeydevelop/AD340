@@ -1,4 +1,4 @@
-package com.ad.ad340.details
+package com.WhatsTheWeatherApp.ad340.details
 
 data class ForecastDetailsViewState(
     val temp: Float,
